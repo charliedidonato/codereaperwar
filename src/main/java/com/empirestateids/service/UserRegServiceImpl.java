@@ -36,7 +36,7 @@ import com.empirestateids.utils.CommonUtil;
 import com.empirestateids.utils.SecurityUtil;
 
 /**
- * @author Syed
+ * @author DiDonato
  *
  */
 @Service("UserRegService")
