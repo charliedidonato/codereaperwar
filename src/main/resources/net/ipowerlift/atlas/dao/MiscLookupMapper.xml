@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="net.ipowerlift.atlas.dao.MiscLookupMapper" >
+  <resultMap id="BaseResultMap" type="net.ipowerlift.atlas.domain.Lookup" >
+    <id column="lookup_id" property="lookupId" jdbcType="INTEGER" />
+    <result column="lookup_name" property="lookupName" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+    <result column="sort_order" property="sortOrder" jdbcType="INTEGER" />
+    <result column="created_by_id" property="createdById" jdbcType="INTEGER" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated_by_id" property="updatedById" jdbcType="INTEGER" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    lookup_id, lookup_name, code, value, sort_order, created_by_id, created, updated_by_id, 
+    updated
+  </sql>
+  
+  <select id="getGroups" resultMap="BaseResultMap">
+    select group_id as code, group_name as value
+    from `groups`
+  </select>
+  
+  <select id="getLatestArticles" resultMap="BaseResultMap">
+    select article_id as code, title as value
+	from article
+	order by updated desc
+	limit 10
+  </select>
+  
+  <select id="getLatestGalleries" resultMap="BaseResultMap">
+    select gallery_id as code, title as value
+	from gallery
+	order by updated desc
+	limit 10
+  </select>
+  
+  <select id="getFederations" resultMap="BaseResultMap">
+    select federation_id as code, name as value
+    from federation
+  </select>
+</mapper>
