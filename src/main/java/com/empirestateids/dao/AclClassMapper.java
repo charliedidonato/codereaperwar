@@ -2,11 +2,11 @@ package com.empirestateids.dao;
 
 import java.util.List;
 
-import net.ipowerlift.atlas.domain.AclClass;
-import net.ipowerlift.atlas.domain.AclClassCriteria;
-
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
+
+import com.empirestateids.domain.AclClass;
+import com.empirestateids.domain.AclClassCriteria;
 
 public interface AclClassMapper {
     /**

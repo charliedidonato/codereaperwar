@@ -104,7 +104,12 @@ public class AtlasBeanComparator extends BeanComparator {
 			}
 		} else {
 		    // not a date, just use string comparison
-		    return getComparator().compare(StringUtils.upperCase((String) property0), StringUtils.upperCase((String) property1));
+			boolean trueOrFalse = property0.equalsIgnoreCase(property1);
+		    if (trueOrFalse) {
+		    	return 0;
+		    }else {
+		    	return -1;
+		    }
 		}
 	}
 

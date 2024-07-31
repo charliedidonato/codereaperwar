@@ -5,17 +5,17 @@ package com.empirestateids.domain;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 import org.hibernate.validator.constraints.NotEmpty;
+
+import jakarta.validation.constraints.Size;
 
 /**
  * @author Syed
- *
+ * @author DiDonato
  */
 public class Group implements Serializable {
 	
+	private static final long serialVersionUID = 7L;
 	private Integer groupId;
 	
 	@NotEmpty

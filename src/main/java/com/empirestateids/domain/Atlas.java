@@ -6,7 +6,9 @@ package com.empirestateids.domain;
 import java.io.Serializable;
 import java.util.Map;
 
-import net.ipowerlift.atlas.common.IConstants;
+import com.empirestateids.common.IConstants;
+
+
 
 /**
  * @author Syed

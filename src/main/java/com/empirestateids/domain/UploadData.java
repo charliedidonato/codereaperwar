@@ -1,11 +1,11 @@
 package com.empirestateids.domain;
 
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 
 public class UploadData {
 
 	  private String fileType;
-	  private CommonsMultipartFile fileData;
+	  private StandardServletMultipartResolver fileData;
 	 
 	  public String getFileType()
 	  {
@@ -17,12 +17,12 @@ public class UploadData {
 	    this.fileType = fileType;
 	  }
 	 
-	  public CommonsMultipartFile getFileData()
+	  public StandardServletMultipartResolver getFileData()
 	  {
 	    return fileData;
 	  }
 	 
-	  public void setFileData(CommonsMultipartFile fileData)
+	  public void setFileData(StandardServletMultipartResolver fileData)
 	  {
 	    this.fileData = fileData;
 	  }

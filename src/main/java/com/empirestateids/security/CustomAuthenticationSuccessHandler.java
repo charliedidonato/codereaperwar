@@ -1,29 +1,34 @@
-/**
- * 
- */
 package com.empirestateids.security;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 /**
  * @author Syed
+ * @author DiDonato
  *
  */
 public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 	// getters and setters for injected services
-	static Logger logger = Logger.class
+	static Logger logger = LogManager.getLogger(CustomAuthenticationSuccessHandler.class);
+	
+	
+	public CustomAuthenticationSuccessHandler() {
+		super();
+	}
 	
 	@Override
-	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)  throws ServletException, IOException {
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+			Authentication authentication) throws IOException, ServletException {
 	
 		if (authentication!=null) {
 		    logger.error("Authentication:"+authentication.toString());
