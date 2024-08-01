@@ -12,11 +12,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-import org.json.simple.JSONValue;
+import org.apache.logging.log4j.LogManager;
 import org.json.simple.parser.ContainerFactory;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
+import net.minidev.json.JSONValue;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * A place for static methods that perform useful work
  *
@@ -26,7 +27,7 @@ import org.json.simple.parser.ParseException;
 public class UtilityMethods {
 
 
-	static Logger theLog = Logger.getLogger(JavaEmail.class);
+	static Logger logger = LogManager.getLogger(JavaEmail.class);
 
 	// a date format for MySql
 	public static final SimpleDateFormat mySqlFormat = new SimpleDateFormat(
@@ -104,18 +105,18 @@ public class UtilityMethods {
 	  try{
 	    json = (Map)parser.parse(jsonText, containerFactory);
 	    Iterator iter = json.entrySet().iterator();
-	    theLog.debug("==iterate result==");
+	    logger.debug("==iterate result==");
 	    while(iter.hasNext()){
 	      Map.Entry entry = (Map.Entry)iter.next();
-	      theLog.debug(entry.getKey() + "=>" + entry.getValue());
+	      logger.debug(entry.getKey() + "=>" + entry.getValue());
 	    }
 
-	    theLog.debug("==toJSONString()==");
-	    theLog.debug(JSONValue.toJSONString(json));
+	    logger.debug("==toJSONString()==");
+	    logger.debug(JSONValue.toJSONString(json));
 
 	  }
 	  catch(ParseException pe){
-	    theLog.error("Exception:"+pe.getMessage()+ "Trace:"
+	    logger.error("Exception:"+pe.getMessage()+ "Trace:"
 	    	+ UtilityMethods.getStackTrace(pe));
 	  }
 	  return json;

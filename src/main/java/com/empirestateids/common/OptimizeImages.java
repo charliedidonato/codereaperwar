@@ -1,10 +1,8 @@
-package com.empirestateids.utils;
+package com.empirestateids.common;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
-
-import com.empirestateids.common.IConstants;
 
 
 public class OptimizeImages {

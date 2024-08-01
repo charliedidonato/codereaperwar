@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.empirestateids.common.IConstants;
@@ -28,7 +29,7 @@ import jakarta.mail.internet.MimeMultipart;
  */
 public class JavaEmail  {
 
-	static Logger theLog = Logger.getLogger(JavaEmail.class);
+	static Logger logger = LogManager.getLogger(JavaEmail.class);
     
     private String theTo = "";
     private String theCc = "";
@@ -63,7 +64,7 @@ public class JavaEmail  {
 
     public void send()  {
     	if (theTo.equals("")||theTo.trim().length() == 0)  {
-            theLog.error("No recipient specified");
+    		logger.error("No recipient specified");
             return;
         }
         Properties props = new Properties();
@@ -111,10 +112,10 @@ public class JavaEmail  {
 //				bus.sendMessage(msg, bccAddress);
 //			}
 			bus.close();
-			theLog.debug("To: " + theTo + ";Subject: " + theSubject);
+			logger.debug("To: " + theTo + ";Subject: " + theSubject);
 			
         } catch (Exception e)  {
-            theLog.error("Exception:"+e.getMessage()+
+        	logger.error("Exception:"+e.getMessage()+
             	"Trace:"+UtilityMethods.getStackTrace(e));
         }
     }

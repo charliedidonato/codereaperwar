@@ -16,7 +16,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.empirestateids.common.IConstants;
-import com.empirestateids.domain.Address;
 import com.empirestateids.domain.AtlasGlobal;
 import com.empirestateids.domain.EmailExt;
 import com.empirestateids.domain.UserRegistration;
@@ -24,7 +23,9 @@ import com.empirestateids.domain.Users;
 import com.empirestateids.utils.AtlasFreemarkerUtils;
 import com.empirestateids.utls.UtilityMethods;
 
+import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
+import jakarta.mail.Address;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
@@ -38,7 +39,7 @@ public class EmailServiceImpl implements EmailService {
 	private JavaMailSenderImpl mailSender;
 
 	@Autowired
-//	private Configuration freemarkerConfig;
+	private Configuration freemarkerConfig;
 	
 	/*
 	 * Send email

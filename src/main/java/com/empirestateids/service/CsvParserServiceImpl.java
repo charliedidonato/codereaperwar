@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.supercsv.cellprocessor.constraint.NotNull;
 import org.supercsv.cellprocessor.ift.CellProcessor;
+import org.supercsv.cellprocessor.ift.StringCellProcessor;
 import org.supercsv.io.CsvListReader;
 import org.supercsv.io.ICsvListReader;
 import org.supercsv.prefs.CsvPreference;
@@ -93,8 +94,8 @@ public class CsvParserServiceImpl implements CsvParserService {
 			final CellProcessor[] processors = new CellProcessor[] {
 					new NotNull(), // LOINC_NUM
 					new NotNull(), // COMPONENT
-					new Optional(), // PROPERTY
-					new Optional(), // TIME_ASPCT
+					new Optional(new StringCellProcessor()), // PROPERTY
+					new StringCellProcessor(), // TIME_ASPCT
 					new Optional(), // SYSTEM
 					new Optional(), // SCALE_TYP
 					new Optional(), // METHOD_TYP

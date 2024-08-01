@@ -1,4 +1,4 @@
-package com.empirestateids.utils;
+package com.empirestateids.common;
 
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
@@ -15,7 +15,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.empirestateids.common.IConstants;
 import com.empirestateids.utls.UtilityMethods;
 
 import net.coobird.thumbnailator.Thumbnails;

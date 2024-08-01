@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.empirestateids.utils;
+package com.empirestateids.common;
 
 import org.apache.commons.validator.routines.EmailValidator;
 import org.apache.logging.log4j.LogManager;
