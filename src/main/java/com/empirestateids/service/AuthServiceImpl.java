@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.empirestateids.common.IConstants;
+import com.empirestateids.common.SecurityUtil;
 import com.empirestateids.dao.EmailMapper;
 import com.empirestateids.dao.PersonMapper;
 import com.empirestateids.dao.UsersMapper;
@@ -24,7 +25,7 @@ import com.empirestateids.domain.UserRegistration;
 import com.empirestateids.domain.Users;
 import com.empirestateids.exception.GenericException;
 
-import net.ipowerlift.atlas.common.util.SecurityUtil;
+
 
 /**
  * @author Syed
@@ -78,7 +79,7 @@ public class AuthServiceImpl implements AuthService {
 				
 				user = new Users();
 				user.setIpowerliftId(person.getIpowerliftId());
-				user.setPassword(SecurityUtil.encryptPassword(temporaryPassword, person.getIpowerliftId()));
+				user.setPassword(SecurityUtil.encryptPassword(temporaryPassword));
 				user.setPasswordReset((short) 1);
 				
 				int status = usersMapper.updateByPrimaryKeySelective(user);

@@ -4,7 +4,8 @@ import java.net.URL;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -12,11 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.common.IConstants;
-import net.ipowerlift.atlas.domain.RowsCreatedOrUpdated;
-import net.ipowerlift.atlas.domain.UploadData;
-import net.ipowerlift.atlas.security.UserInfo;
-import net.ipowerlift.atlas.service.RxNormService;
+import com.empirestateids.common.IConstants;
+import com.empirestateids.domain.RowsCreatedOrUpdated;
+import com.empirestateids.domain.UploadData;
+import com.empirestateids.security.UserInfo;
+import com.empirestateids.service.RxNormService;
 
 /**
  *
@@ -27,7 +28,7 @@ import net.ipowerlift.atlas.service.RxNormService;
 @RequestMapping("/rxnorm")
 public class RxNormController extends AtlasController {
 
-	static Logger logger = Logger.getLogger(RxNormController.class);
+	static Logger logger = LogManager.getLogger(RxNormController.class);
 
 
 //	@Autowired

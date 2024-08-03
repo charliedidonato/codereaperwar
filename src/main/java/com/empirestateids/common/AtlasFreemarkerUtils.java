@@ -5,8 +5,10 @@ import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import com.empirestateids.utls.UtilityMethods;
 
@@ -16,6 +18,15 @@ import freemarker.template.TemplateException;
 @Component
 public class AtlasFreemarkerUtils {
 	static Logger logger = LogManager.getLogger(AtlasFreemarkerUtils.class);
+	
+	
+	@Bean 
+	public FreeMarkerConfigurer freemarkerConfig() { 
+	    FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer(); 
+	    freeMarkerConfigurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
+	    return freeMarkerConfigurer; 
+	}
+	
 	
 	/*
 	 * Run Freemarker engine and get transformed text for the given model and template.

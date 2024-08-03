@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.empirestateids.domain.Content;
 import com.empirestateids.exception.GenericException;
+import com.empirestateids.security.UserInfo;
 import com.empirestateids.service.ContentService;
 import com.empirestateids.service.LookupService;
 import com.empirestateids.utls.UtilityMethods;

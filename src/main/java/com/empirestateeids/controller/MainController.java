@@ -3,7 +3,8 @@ package com.empirestateeids.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DevicePlatform;
@@ -14,13 +15,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.domain.MainContent;
-import net.ipowerlift.atlas.service.MainService;
+import com.empirestateids.domain.MainContent;
+import com.empirestateids.service.MainService;
 
 @Controller
 public class MainController extends AtlasController{
 	
-	static Logger logger = Logger.getLogger(MainController.class);
+	static Logger logger = LogManager.getLogger(MainController.class);
 	
 	@Autowired
 	MainService mainService;

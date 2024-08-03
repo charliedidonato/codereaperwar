@@ -6,16 +6,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.json.simple.parser.ContainerFactory;
-
-import net.minidev.json.JSONValue;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 /**
@@ -89,39 +80,7 @@ public class UtilityMethods {
 		return (cleanString);
 	}
 
-	public static Map parseJSON2(String jsonText)  {
-	  JSONParser parser = new JSONParser();
-	  ContainerFactory containerFactory = new ContainerFactory(){
-	    public List creatArrayContainer() {
-	      return new LinkedList();
-	    }
-
-	    public Map createObjectContainer() {
-	      return new LinkedHashMap();
-	    }
-
-	  };
-	  Map json = null;
-	  try{
-	    json = (Map)parser.parse(jsonText, containerFactory);
-	    Iterator iter = json.entrySet().iterator();
-	    logger.debug("==iterate result==");
-	    while(iter.hasNext()){
-	      Map.Entry entry = (Map.Entry)iter.next();
-	      logger.debug(entry.getKey() + "=>" + entry.getValue());
-	    }
-
-	    logger.debug("==toJSONString()==");
-	    logger.debug(JSONValue.toJSONString(json));
-
-	  }
-	  catch(ParseException pe){
-	    logger.error("Exception:"+pe.getMessage()+ "Trace:"
-	    	+ UtilityMethods.getStackTrace(pe));
-	  }
-	  return json;
-	}
-
+	
 	public static Timestamp getTimestampFormOffsetDateTime(OffsetDateTime offset) {
 
 		Timestamp timestamp = Timestamp.valueOf(offset.atZoneSameInstant(ZoneOffset.UTC).toLocalDateTime());

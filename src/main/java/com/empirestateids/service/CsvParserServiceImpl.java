@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.supercsv.cellprocessor.constraint.NotNull;
+import org.supercsv.cellprocessor.constraint.StrRegEx;
 import org.supercsv.cellprocessor.ift.CellProcessor;
-import org.supercsv.cellprocessor.ift.StringCellProcessor;
 import org.supercsv.io.CsvListReader;
 import org.supercsv.io.ICsvListReader;
 import org.supercsv.prefs.CsvPreference;
@@ -89,49 +89,51 @@ public class CsvParserServiceImpl implements CsvParserService {
     }	
     
 	private static CellProcessor[] getProcessors(String fileType) {
+		
+		final String asciiRegex = "^[\\x20-\\x7E]+$";
 		logger.error("FILETYPE:"+fileType);
 		if ("L".equalsIgnoreCase(fileType)) {
 			final CellProcessor[] processors = new CellProcessor[] {
 					new NotNull(), // LOINC_NUM
 					new NotNull(), // COMPONENT
-					new Optional(new StringCellProcessor()), // PROPERTY
-					new StringCellProcessor(), // TIME_ASPCT
-					new Optional(), // SYSTEM
-					new Optional(), // SCALE_TYP
-					new Optional(), // METHOD_TYP
-					new Optional(), // CLASS_NAME
-					new Optional(), // VersionLastChanged
-					new Optional(), // CHNG_TYPE
-					new Optional(), // DefinitionDescription
-					new Optional(), // STATUS
-					new Optional(), // CONSUMER_NAME
-					new Optional(), // CLASSTYPE
-					new Optional(), // FORMULA
-					new Optional(), // EXMPL_ANSWERS
-					new Optional(), // SURVEY_QUEST_TEXT
-					new Optional(), // SURVEY_QUEST_SRC
-					new Optional(), // UNITSREQUIRED
-					new Optional(), // RELATEDNAMES2
-					new Optional(), // SHORTNAME
-					new Optional(), // ORDER_OBS
-					new Optional(), // HL7_FIELD_SUBFIELD_ID
-					new Optional(), // EXTERNAL_COPYRIGHT_NOTICE
-					new Optional(), // EXAMPLE_UNITS
+					new StrRegEx(asciiRegex), // PROPERTY
+					new StrRegEx(asciiRegex), // TIME_ASPCT
+					new StrRegEx(asciiRegex), // SYSTEM
+					new StrRegEx(asciiRegex), // SCALE_TYP
+					new StrRegEx(asciiRegex), // METHOD_TYP
+					new StrRegEx(asciiRegex), // CLASS_NAME
+					new StrRegEx(asciiRegex), // VersionLastChanged
+					new StrRegEx(asciiRegex), // CHNG_TYPE
+					new StrRegEx(asciiRegex), // DefinitionDescription
+					new StrRegEx(asciiRegex), // STATUS
+					new StrRegEx(asciiRegex), // CONSUMER_NAME
+					new StrRegEx(asciiRegex), // CLASSTYPE
+					new StrRegEx(asciiRegex), // FORMULA
+					new StrRegEx(asciiRegex), // EXMPL_ANSWERS
+					new StrRegEx(asciiRegex), // SURVEY_QUEST_TEXT
+					new StrRegEx(asciiRegex), // SURVEY_QUEST_SRC
+					new StrRegEx(asciiRegex), // UNITSREQUIRED
+					new StrRegEx(asciiRegex), // RELATEDNAMES2
+					new StrRegEx(asciiRegex), // SHORTNAME
+					new StrRegEx(asciiRegex), // ORDER_OBS
+					new StrRegEx(asciiRegex), // HL7_FIELD_SUBFIELD_ID
+					new StrRegEx(asciiRegex), // EXTERNAL_COPYRIGHT_NOTICE
+					new StrRegEx(asciiRegex), // EXAMPLE_UNITS
 					new NotNull(), // LONG_COMMON_NAME
-					new Optional(), // EXAMPLE_UCUM_UNITS
-					new Optional(), // STATUS_REASON
-					new Optional(), // STATUS_TEXT
-					new Optional(), // CHANGE_REASON_PUBLIC
-					new Optional(), // COMMON_TEST_RANK
-					new Optional(), // COMMON_ORDER_RANK
-					new Optional(), // HL7_ATTACHMENT_STRUCTURE					
-					new Optional(), // EXTERNAL_COPYRIGHT_LINK
-					new Optional(), // PanelType
-					new Optional(), // AskAtOrderEntry
-					new Optional(), // AssociatedObservations
-					new Optional(), // VersionFirstReleased
-					new Optional(), // ValidHL7AttachmentRequest
-					new Optional()  // DisplayName
+					new StrRegEx(asciiRegex), // EXAMPLE_UCUM_UNITS
+					new StrRegEx(asciiRegex), // STATUS_REASON
+					new StrRegEx(asciiRegex), // STATUS_TEXT
+					new StrRegEx(asciiRegex), // CHANGE_REASON_PUBLIC
+					new StrRegEx(asciiRegex), // COMMON_TEST_RANK
+					new StrRegEx(asciiRegex), // COMMON_ORDER_RANK
+					new StrRegEx(asciiRegex), // HL7_ATTACHMENT_STRUCTURE					
+					new StrRegEx(asciiRegex), // EXTERNAL_COPYRIGHT_LINK
+					new StrRegEx(asciiRegex), // PanelType
+					new StrRegEx(asciiRegex), // AskAtOrderEntry
+					new StrRegEx(asciiRegex), // AssociatedObservations
+					new StrRegEx(asciiRegex), // VersionFirstReleased
+					new StrRegEx(asciiRegex), // ValidHL7AttachmentRequest
+					new StrRegEx(asciiRegex)  // DisplayName
 			};
 			return processors;
 		} else {

@@ -16,6 +16,7 @@ public interface IConstants {
 
 
 	public static final String ATLAS_PROD_URL_STRING = "https://empirestateids.com";
+	public static final String ATLAS_PROD_URL_STRING_REST = "https://empirestateids.com/codereaper/REST/";
 
 	public static final String ATLAS_PROD_CONTEXT_URL = "/codereaper/";
 

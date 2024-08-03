@@ -6,7 +6,8 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -20,18 +21,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.common.IConstants;
-import net.ipowerlift.atlas.common.exception.GenericException;
-import net.ipowerlift.atlas.domain.Group;
-import net.ipowerlift.atlas.security.UserInfo;
-import net.ipowerlift.atlas.service.GroupService;
-import net.ipowerlift.atlas.utls.UtilityMethods;
+import com.empirestateids.common.IConstants;
+import com.empirestateids.domain.Group;
+import com.empirestateids.exception.GenericException;
+import com.empirestateids.security.UserInfo;
+import com.empirestateids.service.GroupService;
+import com.empirestateids.utls.UtilityMethods;
 
 @Controller
 @RequestMapping("/group")
 public class GroupController extends AtlasController{
 	
-	static Logger logger = Logger.getLogger(GroupController.class);
+	static Logger logger = LogManager.getLogger(GroupController.class);
 	
 	@Autowired
 	private GroupService groupService;
@@ -161,25 +162,25 @@ public class GroupController extends AtlasController{
 	 * Register custom, context-specific property editors
 	 * 
 	 */
-	@InitBinder
-	public void initBinder(WebDataBinder binder, HttpServletRequest request) { // Register static property editors.
-		
-		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-	    df.setLenient(false);
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(df, true));
-		
-		binder.registerCustomEditor(java.util.Calendar.class, new org.skyway.spring.util.databinding.CustomCalendarEditor());
-		binder.registerCustomEditor(byte[].class, new org.springframework.web.multipart.support.ByteArrayMultipartFileEditor());
-		binder.registerCustomEditor(boolean.class, new org.skyway.spring.util.databinding.EnhancedBooleanEditor(false));
-		binder.registerCustomEditor(Boolean.class, new org.skyway.spring.util.databinding.EnhancedBooleanEditor(true));
-		binder.registerCustomEditor(java.math.BigDecimal.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(java.math.BigDecimal.class, true));
-		binder.registerCustomEditor(Integer.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(Integer.class, true));
-		//binder.registerCustomEditor(java.util.Date.class, new org.skyway.spring.util.databinding.CustomDateEditor());
-		binder.registerCustomEditor(String.class, new org.skyway.spring.util.databinding.StringEditor());
-		binder.registerCustomEditor(Long.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(Long.class, true));
-		binder.registerCustomEditor(Double.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(Double.class, true));
-		
-		//binder.setValidator(new GroupValidator());
-	}
+//	@InitBinder
+//	public void initBinder(WebDataBinder binder, HttpServletRequest request) { // Register static property editors.
+//		
+//		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+//	    df.setLenient(false);
+//		binder.registerCustomEditor(Date.class, new CustomDateEditor(df, true));
+//		
+//		binder.registerCustomEditor(java.util.Calendar.class, new org.skyway.spring.util.databinding.CustomCalendarEditor());
+//		binder.registerCustomEditor(byte[].class, new org.springframework.web.multipart.support.ByteArrayMultipartFileEditor());
+//		binder.registerCustomEditor(boolean.class, new org.skyway.spring.util.databinding.EnhancedBooleanEditor(false));
+//		binder.registerCustomEditor(Boolean.class, new org.skyway.spring.util.databinding.EnhancedBooleanEditor(true));
+//		binder.registerCustomEditor(java.math.BigDecimal.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(java.math.BigDecimal.class, true));
+//		binder.registerCustomEditor(Integer.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(Integer.class, true));
+//		//binder.registerCustomEditor(java.util.Date.class, new org.skyway.spring.util.databinding.CustomDateEditor());
+//		binder.registerCustomEditor(String.class, new org.skyway.spring.util.databinding.StringEditor());
+//		binder.registerCustomEditor(Long.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(Long.class, true));
+//		binder.registerCustomEditor(Double.class, new org.skyway.spring.util.databinding.NaNHandlingNumberEditor(Double.class, true));
+//		
+//		binder.setValidator(new GroupValidator());
+//	}
 	
 }

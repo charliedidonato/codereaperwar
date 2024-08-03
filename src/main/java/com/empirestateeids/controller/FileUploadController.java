@@ -10,7 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.empirestateids.common.IConstants;
@@ -35,7 +35,8 @@ public class FileUploadController extends AtlasController {
 	}
 	
 	@RequestMapping(value = "/saveForm", method = RequestMethod.POST)
-	public String saveForm(TestBean uploadItem, BindingResult result) {
+	public String saveForm(TestBean uploadItem, BindingResult result) 
+		throws IOException {
 		if (result.hasErrors()) {
 			for (ObjectError error : result.getAllErrors()) {
 				logger.error("Error: " + error.getCode() + " - "
@@ -50,7 +51,7 @@ public class FileUploadController extends AtlasController {
 				+ uploadItem.getMultiPartFile().getOriginalFilename());
 		System.err.println("-------------------------------------------");
 
-		CommonsMultipartFile multiPartFile = uploadItem.getMultiPartFile();
+		MultipartFile  multiPartFile = uploadItem.getMultiPartFile();
 		
 		byte[] byteArray = multiPartFile.getBytes();
 		// do whatever

@@ -1,5 +1,6 @@
 package com.empirestateids.common;
 
+import java.beans.PropertyDescriptor;
 import java.util.Comparator;
 import java.util.Locale;
 
@@ -8,7 +9,6 @@ import org.apache.commons.validator.GenericValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeanUtils;
-import org.springframework.util.StringUtils;
 
 import com.empirestateids.exception.GenericException;
 import com.empirestateids.utls.UtilityMethods;
@@ -32,8 +32,12 @@ public class AtlasBeanComparator extends BeanComparator {
 		String property0 = null;
 		String property1 = null;
 		try {
-			property0 = BeanUtils.getProperty(p0, this.getProperty());
-			property1 = BeanUtils.getProperty(p1, this.getProperty());
+			PropertyDescriptor propertyDescriptor1 = BeanUtils
+	            .getPropertyDescriptor(p0.getClass(), this.getProperty());
+			property0 = (String) propertyDescriptor1.getValue(propertyDescriptor1.getName());
+			PropertyDescriptor propertyDescriptor2 = BeanUtils
+		            .getPropertyDescriptor(p1.getClass(), this.getProperty());
+			property1 = (String) (String)propertyDescriptor2.getValue(propertyDescriptor2.getName());
 		} catch (Exception e) {
 			logger.error("Exception:" + e.getMessage() + " Trace:" +	UtilityMethods.getStackTrace(e));
 			return 0;

@@ -9,20 +9,21 @@ import java.util.Arrays;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.common.exception.GenericException;
-import net.ipowerlift.atlas.utls.UtilityMethods;
+import com.empirestateids.exception.GenericException;
+import com.empirestateids.utls.UtilityMethods;
 
 @Controller
 @RequestMapping("/log")
 public class LogController extends AtlasController{
 	
-	static Logger logger = Logger.getLogger(LogController.class);
+	static Logger logger = LogManager.getLogger(LogController.class);
 	
 	@RequestMapping("/showLogFiles")
 	public ModelAndView showLogFiles(){

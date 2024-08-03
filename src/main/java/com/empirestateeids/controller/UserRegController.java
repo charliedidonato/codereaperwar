@@ -4,7 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
@@ -19,22 +20,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.common.IConstants;
-import net.ipowerlift.atlas.common.exception.GenericException;
-import net.ipowerlift.atlas.common.exception.PermissionDeniedException;
-import net.ipowerlift.atlas.domain.GroupMember;
-import net.ipowerlift.atlas.domain.UserRegistration;
-import net.ipowerlift.atlas.security.UserInfo;
-import net.ipowerlift.atlas.service.UserRegService;
-import net.ipowerlift.atlas.utls.UtilityMethods;
-import net.ipowerlift.atlas.validator.userReg.UserRegChangePwdValidator;
-import net.ipowerlift.atlas.validator.userReg.UserRegNewValidator;
+import com.empirestateids.common.IConstants;
+import com.empirestateids.domain.GroupMember;
+import com.empirestateids.domain.UserRegistration;
+import com.empirestateids.exception.GenericException;
+import com.empirestateids.exception.PermissionDeniedException;
+import com.empirestateids.security.UserInfo;
+import com.empirestateids.service.UserRegService;
+import com.empirestateids.utls.UtilityMethods;
+import com.empirestateids.validators.UserRegChangePwdValidator;
+import com.empirestateids.validators.UserRegNewValidator;
 
 @Controller
 @RequestMapping("/userReg")
 public class UserRegController extends AtlasController{
 	
-	static Logger logger = Logger.getLogger(UserRegController.class);
+	static Logger logger = LogManager.getLogger(UserRegController.class);
 	
 	@Autowired
 	private UserRegService userRegService;

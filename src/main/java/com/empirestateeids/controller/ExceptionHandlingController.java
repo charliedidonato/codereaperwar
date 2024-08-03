@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.common.exception.GenericException;
-import net.ipowerlift.atlas.utls.UtilityMethods;
+import com.empirestateids.exception.GenericException;
+import com.empirestateids.utls.UtilityMethods;
 
 @Controller
 public class ExceptionHandlingController extends AtlasController {

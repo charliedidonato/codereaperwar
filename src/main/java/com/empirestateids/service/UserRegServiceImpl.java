@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.empirestateids.common.IConstants;
+import com.empirestateids.common.SecurityUtil;
 import com.empirestateids.dao.ContactMapper;
 import com.empirestateids.dao.EmailMapper;
 import com.empirestateids.dao.GroupMemberMapper;
@@ -33,7 +34,6 @@ import com.empirestateids.domain.Users;
 import com.empirestateids.domain.UsersCriteria;
 import com.empirestateids.security.UserInfo;
 import com.empirestateids.utils.CommonUtil;
-import com.empirestateids.utils.SecurityUtil;
 
 /**
  * @author DiDonato
@@ -139,7 +139,7 @@ public class UserRegServiceImpl implements UserRegService {
 		//users
 		user.setIpowerliftId(ipowerliftId);
 		
-		user.setPassword(SecurityUtil.encryptPassword(user.getPassword(), ipowerliftId));
+		user.setPassword(SecurityUtil.encryptPassword(user.getPassword()));
 		
 		user.setAccountNonExpired(IConstants.TRUE);
 		user.setAccountNonLocked(IConstants.TRUE);
@@ -393,7 +393,7 @@ public class UserRegServiceImpl implements UserRegService {
 		CommonUtil.setAuditInfo(user, userInfo, false, true);
 		
 		//users
-		user.setPassword(SecurityUtil.encryptPassword(user.getPassword(), ipowerliftId));
+		user.setPassword(SecurityUtil.encryptPassword(user.getPassword()));
 		
 		user.setPasswordReset((short) 0);
 		

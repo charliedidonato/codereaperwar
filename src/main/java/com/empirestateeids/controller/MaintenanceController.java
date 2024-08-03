@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.service.ShowThreadsService;
-import net.ipowerlift.atlas.service.common.LogReaderService;
+import com.empirestateids.service.LogReaderService;
+import com.empirestateids.service.ShowThreadsService;
 
 @Controller
 @RequestMapping("/maint")

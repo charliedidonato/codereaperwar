@@ -4,7 +4,8 @@
 package com.empirestateids.domain;
 
 import java.util.Date;
-import org.springframework.web.multipart.support.StandardServletMultipartResolver;
+import org.springframework.web.multipart.MultipartFile;
+
 
 /**
  * @author Syed
@@ -14,7 +15,7 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 public class TestBean {
 	private String eventName; 
 	private Date eventDate;
-	private StandardServletMultipartResolver multiPartFile;
+	private MultipartFile  multiPartFile;
 	
 	/**
 	 * @return the eventDate
@@ -31,13 +32,13 @@ public class TestBean {
 	/**
 	 * @return the multiPartFile
 	 */
-	public StandardServletMultipartResolver getMultiPartFile() {
+	public MultipartFile  getMultiPartFile() {
 		return multiPartFile;
 	}
 	/**
 	 * @param multiPartFile the multiPartFile to set
 	 */
-	public void setMultiPartFile(StandardServletMultipartResolver multiPartFile) {
+	public void setMultiPartFile(MultipartFile  multiPartFile) {
 		this.multiPartFile = multiPartFile;
 	}
 	/**

@@ -2,15 +2,16 @@ package com.empirestateeids.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.ipowerlift.atlas.domain.RowsCreatedOrUpdated;
-import net.ipowerlift.atlas.security.UserInfo;
-import net.ipowerlift.atlas.service.IcdService;
+import com.empirestateids.domain.RowsCreatedOrUpdated;
+import com.empirestateids.security.UserInfo;
+import com.empirestateids.service.IcdService;
 
 /**
  *
@@ -21,7 +22,7 @@ import net.ipowerlift.atlas.service.IcdService;
 @RequestMapping("/icdcode")
 public class IcdCodeController extends AtlasController {
 
-	static Logger logger = Logger.getLogger(AuthController.class);
+	static Logger logger = LogManager.getLogger(AuthController.class);
 
 	@Autowired
 	IcdService icdService;

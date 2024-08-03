@@ -7,15 +7,15 @@ import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.RandomStringUtils;
-import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import net.ipowerlift.atlas.security.UserInfo;
+import com.empirestateids.security.UserInfo;
 
 /**
  * @author Syed
@@ -23,11 +23,12 @@ import net.ipowerlift.atlas.security.UserInfo;
  */
 public class SecurityUtil {
 
-	public static String encryptPassword(String password, Integer salt) {
-		ShaPasswordEncoder passwordEncoder = new ShaPasswordEncoder();
-		String encodedPassword = passwordEncoder.encodePassword(password, salt);
+	public static String encryptPassword(String password) {
+		BCryptPasswordEncoder  passwordEncoder = new BCryptPasswordEncoder();
+		String encodedPassword = passwordEncoder.encode(password);
 		return encodedPassword;
 	}
+	
 
 	/**
 	 * Check if a role is present in the logged in user
