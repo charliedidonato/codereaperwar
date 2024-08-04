@@ -2,7 +2,7 @@ package com.empirestateids.main;
 
 import com.empirestateids.common.SecurityUtil;
 
-public class Testencryption {
+public class TestEncryption {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

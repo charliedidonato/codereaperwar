@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.empirestateids</groupId>
 	<artifactId>Codereaper</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>Codereaper</name>
 	<description>Codereaper for standard code sets</description>
 	<url />
@@ -206,6 +206,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+    			<artifactId>maven-war-plugin</artifactId>
+    			<configuration>
+        			<attachClasses>true</attachClasses>
+        			<webXml>target/web.xml</webXml>
+        			<webResources>
+            			<resource>
+                			<directory>src/main/webapp</directory>
+                			<filtering>true</filtering>
+            			</resource>
+        			</webResources>
+    			</configuration>
 			</plugin>
 		</plugins>
 	</build>
