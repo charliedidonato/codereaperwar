@@ -10,15 +10,13 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-
 import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import com.empirestateids.common.IConstants;
 import com.empirestateids.utls.UtilityMethods;
-
 import net.coobird.thumbnailator.Thumbnails;
+
 
 /**
  * Utils to operate on images.
@@ -168,8 +166,8 @@ public class AtlasImageUtils {
 									final int height, final float quality,
 									final File destFile, final boolean aspectRatio) throws IOException {
 		try {
-//			Thumbnails.of(sourceImage).size(width, height).rotate(0).keepAspectRatio(aspectRatio)
-//			.outputQuality(quality).toFile(destFile);
+			Thumbnails.of(sourceImage).size(width, height).rotate(0).keepAspectRatio(aspectRatio)
+			.outputQuality(quality).toFile(destFile);
 			// for some special files outputQuality couses error:
 			//IllegalStateException inner Thumbnailator jar. When exception is thrown
 			// image is resized without quality
@@ -179,8 +177,8 @@ public class AtlasImageUtils {
 			//	.outputQuality(quality).toFile(destFile);
 			// should remain.
 		} catch (IllegalStateException e) {
-//			Thumbnails.of(sourceImage).size(width, height).rotate(0).keepAspectRatio(aspectRatio)
-//						.toFile(destFile);
+			Thumbnails.of(sourceImage).size(width, height).rotate(0).keepAspectRatio(aspectRatio)
+						.toFile(destFile);
 		}
 	}
 	
@@ -299,7 +297,7 @@ public class AtlasImageUtils {
 		float quality = IConstants.DEFAULT_IMG_QUALITY;
 		try {
 			bi = ImageIO.read(imgFile);
-			//Thumbnails.of(bi).outputQuality(quality).size(width, height).rotate(degreesRight).toFile(imgFile);
+			Thumbnails.of(bi).outputQuality(quality).size(width, height).rotate(degreesRight).toFile(imgFile);
 			bi = ImageIO.read(imgFile);
 			
 		} catch (IOException e) {
