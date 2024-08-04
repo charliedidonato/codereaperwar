@@ -1,4 +1,4 @@
-package com.empirestateeids.controller;
+package com.empirestateids.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
