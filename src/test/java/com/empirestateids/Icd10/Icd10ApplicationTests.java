@@ -12,9 +12,10 @@ import com.empirestateids.common.SecurityUtil;
 class Icd10ApplicationTests {
 
 	@Test
-	void TestEncryption() {
+	static void TestEncryption() {
 		String password = "Pass4Atlas";
 	    String encryptedPass = SecurityUtil.encryptPassword(password);
+	    System.out.println(encryptedPass);
 	    assertNotNull(encryptedPass);
 	}
 	

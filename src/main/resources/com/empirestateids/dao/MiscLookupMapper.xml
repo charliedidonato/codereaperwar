@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="net.ipowerlift.atlas.dao.MiscLookupMapper" >
+<mapper namespace="com.empirestateids.dao.MiscLookupMapper" >
   <resultMap id="BaseResultMap" type="net.ipowerlift.atlas.domain.Lookup" >
     <id column="lookup_id" property="lookupId" jdbcType="INTEGER" />
     <result column="lookup_name" property="lookupName" jdbcType="VARCHAR" />
