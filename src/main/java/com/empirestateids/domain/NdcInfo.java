@@ -1,6 +1,6 @@
 package com.empirestateids.domain;
 
-import com.google.gson.annotations.SerializedName;
+import com.nimbusds.jose.shaded.gson.annotations.SerializedName;
 
 
 public class NdcInfo {

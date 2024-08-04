@@ -1,8 +1,8 @@
 package com.empirestateids.domain;
 
 import java.util.List;
+import com.nimbusds.jose.shaded.gson.annotations.SerializedName;
 
-import com.google.gson.annotations.SerializedName;
 
 public class NdcInfoList {
 
