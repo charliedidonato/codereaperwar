@@ -1,0 +1,218 @@
+we@charset "utf-8";
+/* CSS Document */
+
+html {
+	font-size: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-color:#ffffff;
+}
+		
+body{
+	height:auto;
+	width: 1024px;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	font:bold 36px/42px Arial, Helvetica, sans-serif;
+	color: black;
+	background-color:#dfdfdf;
+}
+
+#container{
+	height:auto;
+	width: 1024px;
+	top:-1;
+	left:-1;
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	color: black;
+}
+
+	#mainDiv {
+			position: relative;
+			top: -1;
+			left: -1;
+			/*background: #dfdfdf;*/
+			height: 250px;
+			/*color: #FFFFFF;  */
+			width: 1024px;
+			margin: 0 auto;
+			padding: 0px;
+			background-image: url("/togamaven/images/ginacherrymobile.png");
+			background-color: #dfdfdf;
+	}
+	#mainDivPicker {
+				position: relative;
+				top: -1;
+				left: -1;
+				/*background: #dfdfdf;*/
+				height: 250px;
+				/*color: #FFFFFF;  */
+				width: 1024px;
+				margin: 0 auto;
+				padding: 0px;
+				background-image: url("/togamaven/images/ginacherry.png");
+				background-color: #dfdfdf;
+	}
+	#templateMainDiv {
+			position: relative;
+			top: -1;
+			left: -1;
+			/*background: #dfdfdf;*/
+			height: 250px;
+			/*color: #FFFFFF;  */
+			width: 1024px;
+			margin: 0 auto;
+			padding: 0px;
+			background-image: url("/togamaven/images/ginacherrymobile.png");
+			background-color: #dfdfdf;
+	}
+	
+	.style1-button{	  
+		  margin: 10;
+		  width: 60px;
+		  font-family: "Century Gothic";
+		  font-size: 48px;
+		  appearance: none;
+		  box-shadow: none;
+		  border-radius: none;
+	   }
+	    .style2-button{	  
+			  margin: 10;
+			  font-family: "Century Gothic";
+			  font-size: 48px;
+			  appearance: none;
+			  box-shadow: none;
+			  border-radius: none;
+	    }
+
+	    
+#tooltip
+{
+    text-align: center;
+    color: #fff;
+    background: #111;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+}
+ 
+    #tooltip:after /* triangle decoration */
+    {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #111;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+    }
+ 
+        #tooltip.top:after
+        {
+            border-top-color: transparent;
+            border-bottom: 10px solid #111;
+            top: -20px;
+            bottom: auto;
+        }
+ 
+        #tooltip.left:after
+        {
+            left: 10px;
+            margin: 0;
+        }
+ 
+        #tooltip.right:after
+        {
+            right: 10px;
+            left: auto;
+            margin: 0;
+        }	    
+        
+.listTable{
+		border:1px solid gray;
+	}
+	.tr_header {
+	        background-color: #B97A57;
+ 		    font-family:"Century Gothic";
+ 		    font-size:60px;
+ 		    font-weight:bold;
+		    height: 60px;
+    }
+    .tr_sub_header {
+	        background-color: #BDBDBD;
+	        border:1px solid black;
+	        font-family:"Century Gothic";
+		    font-size:18px;
+    }
+    .rowholder{
+    		background-color: #800000;
+    		font-family:"Century Gothic";
+    		font-size:16px;
+    		border:5px;
+    		border-top-style:dotted;
+    		border-bottom-style:dotted;
+    		border-color:#B97A57;
+	}
+       .roweven{
+		background-color: #FFFFFF;
+		font-family:"Century Gothic";
+		font-size:72px;
+		font-weight:bold;
+	
+		border-top-style:dotted;
+		border-bottom-style:dotted;
+		border-color:#B97A57;
+		height: 78px;
+    	vertical-align: middle;
+	}
+	.rowodd{
+		background-color: #FFFFFF; 
+		font-family:"Century Gothic";
+		font-size:72px;
+		font-weight:bold;
+		border-top-style:dotted;
+		border-bottom-style:dotted;
+		border-color:black;
+		height: 78px;
+    	vertical-align: middle;
+	}
+	.winnerrow{
+		background-color: #00FFFF; 
+		font-family:"Century Gothic";
+		font-size:72px;
+		font-weight:bold;
+		border-top-style:dotted;
+		border-bottom-style:dotted;
+		border-color:black;
+		height: 78px;
+    	vertical-align: middle;
+	}
+	
+	.roweven_summary{
+	    font-family:"Century Gothic";
+	    font-weight:bold;
+	    font-size:56px;
+        background-color: #B97A57;
+	    height: 60px;
+    	vertical-align: middle;
+		
+	}
+	.rowodd_summary{
+	    font-family:"Century Gothic";
+	    font-size:56px;
+		background-color: #FFFFFF; 
+	    height: 60px;
+    	vertical-align: middle;		
+	}        
+	.label{
+		    font-family:"Century Gothic";
+		    font-size:56px;
+		    font-weight:bold;
+		    height: 60px;
+	    	vertical-align: middle;		
+	}  

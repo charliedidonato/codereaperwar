@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.empirestateids.common.IConstants;
@@ -39,6 +40,7 @@ import com.empirestateids.security.UserInfo;
  *
  *
  */
+@Component
 @Service("IcdService")
 public class IcdServiceImpl implements IcdService {
 

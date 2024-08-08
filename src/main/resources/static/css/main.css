@@ -1,0 +1,26 @@
+@import "root.css";
+
+body {
+  color: var(--bs-white);
+}
+
+h1 {
+  font-family: "Old Standard TT", serif;
+}
+
+.cookie-policy {
+  background-color: var(--brand-red-dark);
+  color: var(--bs-white);
+  width: 400px;
+  height: 250px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 10px;
+}
+
+.cookie-policy .btn {
+  background-color: var(--bs-white);
+  color: black;
+  border-radius: 7px;
+}

@@ -1,0 +1,71 @@
+:root {
+    --bs-font-sans-serif: "Gudea", Georgia, serif;
+    --brand-red-dark: #AC3226;
+    --brand-pink: #efbdb8;
+    --brand-black: #0d0d0d;
+    --brand-red: #d53b37; 
+    --brand-white: #fff;
+    --brand-gray: #dfdfdf;
+}
+
+.text-brand-red {
+    color: var(--brand-red);
+}
+
+.text-brand-red-dark {
+    color: var(--brand-red-dark);
+}
+
+.text-brand-gray {
+    color: var(--brand-gray);
+}
+
+.text-brand-black {
+    color: var(--brand-black);
+}
+
+.brand-button {
+    border-radius: 48px;
+    min-height: 56px;
+    padding: 15px 40px 0 40px;
+    text-transform: uppercase;
+}
+
+.btn-brand-red {
+    color: #fff;
+    background-color: var(--brand-red);
+    border-color: var(--brand-red);
+}
+
+.btn-brand-red-dark {
+    color: #fff;
+    background-color: var(--brand-red-dark);
+    border-color: var(--brand-red);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.55)
+}
+
+.btn-outline-brand-red {
+    font-family: 'AvenirNext';
+    color: var(--brand-red);
+    border-color: var(--brand-red);
+}
+.btn-outline-brand-red:hover {    
+    color: var(--brand-white);
+    background-color: var(--brand-red-dark);
+}
+
+.bg-brand-pink {
+    background-color: var(--brand-pink);
+}
+
+.bg-brand-red {
+    background-color: var(--brand-red);
+}
+
+.bg-brand-red-dark {
+    background-color: var(--brand-red-dark);
+}
+
+.bg-black {
+    background-color: black;
+}

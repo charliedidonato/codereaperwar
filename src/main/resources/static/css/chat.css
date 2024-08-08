@@ -1,0 +1,26 @@
+@import "root.css";
+
+#chat-container #chat-btn-open{
+    position: fixed;
+    right: 20px;
+    top: 90%;
+}
+
+#chat-container svg{
+  height:55px;
+  width:45px;
+}
+
+.speech-bubble {
+  position: relative;
+  top: -30px;
+}
+.speech-bubble svg{        
+  left: 70px;
+  position: relative;
+  top: -8px;
+}
+
+#chat-form {
+  position: absolute;
+}

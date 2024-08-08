@@ -7,12 +7,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
  * @author Charlie D
  *
  */
+@Component
 @Service("LogReaderService")
 public class LogReaderServiceImpl implements LogReaderService {
 

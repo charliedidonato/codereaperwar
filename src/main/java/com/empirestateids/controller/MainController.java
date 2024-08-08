@@ -48,17 +48,17 @@ public class MainController extends AtlasController{
 	
 		mav.addObject("userName", username);
 		mav.addObject("devicePlatform", platform.toString());
-		if (currentDevice.isMobile()) {
-			logger.error("going to mobile mhome.jsp");
-			mav.setViewName("mhome.jsp"); 
-		} else {
+//		if (currentDevice.isMobile()) {
+//			logger.error("going to mobile mhome.jsp");
+//			mav.setViewName("mhome.jsp"); 
+//		} else {
 			logger.error("going to normal home.jsp");
 			mav.setViewName("home.jsp");
-		}
+//		}
 		return mav;
 	}
 	
-	@RequestMapping("/oldhome")
+	@RequestMapping("/adminhome")
 	public ModelAndView oldhome(HttpServletRequest request,HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView();
 		MainContent mainContent = new MainContent();
@@ -73,7 +73,7 @@ public class MainController extends AtlasController{
 		} else {
 			username = principal.toString();
 		}
-		mav.setViewName("oldhome.jsp");
+		mav.setViewName("adminhome.jsp");
 		mav.addObject("userName", username);
 		return mav;
 	}

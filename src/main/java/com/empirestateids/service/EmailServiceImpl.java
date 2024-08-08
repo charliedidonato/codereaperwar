@@ -13,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.mail.MailException;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.empirestateids.common.IConstants;
@@ -31,6 +32,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
+@Component
 @Service("EmailService")
 public class EmailServiceImpl implements EmailService {
 	static Logger logger = LogManager.getLogger(EmailServiceImpl.class);
@@ -44,6 +46,7 @@ public class EmailServiceImpl implements EmailService {
 	/*
 	 * Send email
 	 */
+	
 	private void sendEmail(MimeMessage message) throws MessagingException, MailException{
 		// send email if in production 
 		// send email if in local and localemail is set to 'Y'

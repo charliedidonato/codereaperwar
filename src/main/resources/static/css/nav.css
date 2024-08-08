@@ -1,0 +1,16 @@
+@import "root.css";
+
+nav {
+    font-family: 'AvenirNext', sans-serif;
+    font-size:  28px;
+    font-style: bold;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-brand {
+    color: var(--brand-red);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--bs-white);
+}

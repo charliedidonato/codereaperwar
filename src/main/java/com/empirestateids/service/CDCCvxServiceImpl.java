@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,6 +51,7 @@ import com.empirestateids.utls.UtilityMethods;
  *
  *
  */
+@Component
 @Service("CDCCvxService")
 public class CDCCvxServiceImpl implements CDCCvxService {
 

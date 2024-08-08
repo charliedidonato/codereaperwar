@@ -1,0 +1,129 @@
+html {
+	line-height: 1.15; -webkit-text-size-adjust: 100%;
+}
+body {
+	margin: 0px;
+}
+main {
+	display: block;
+}
+h1 {
+	margin: 0.67em 0px; font-size: 2em;
+}
+hr {
+	height: 0px; overflow: visible; box-sizing: content-box;
+}
+pre {
+	font-family: monospace, monospace; font-size: 1em;
+}
+a {
+	background-color: transparent;
+}
+abbr[title] {
+	text-decoration: underline; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+b {
+	font-weight: bolder;
+}
+strong {
+	font-weight: bolder;
+}
+code {
+	font-family: monospace, monospace; font-size: 1em;
+}
+kbd {
+	font-family: monospace, monospace; font-size: 1em;
+}
+samp {
+	font-family: monospace, monospace; font-size: 1em;
+}
+small {
+	font-size: 80%;
+}
+sub {
+	line-height: 0; font-size: 75%; vertical-align: baseline; position: relative;
+}
+sup {
+	line-height: 0; font-size: 75%; vertical-align: baseline; position: relative;
+}
+sub {
+	bottom: -0.25em;
+}
+sup {
+	top: -0.5em;
+}
+img {
+	
+}
+button {
+	margin: 0px; line-height: 1.15; font-family: inherit; font-size: 100%;
+}
+input {
+	margin: 0px; line-height: 1.15; font-family: inherit; font-size: 100%;
+}
+optgroup {
+	margin: 0px; line-height: 1.15; font-family: inherit; font-size: 100%;
+}
+select {
+	margin: 0px; line-height: 1.15; font-family: inherit; font-size: 100%;
+}
+textarea {
+	margin: 0px; line-height: 1.15; font-family: inherit; font-size: 100%;
+}
+button {
+	overflow: visible;
+}
+input {
+	overflow: visible;
+}
+button {
+	text-transform: none;
+}
+select {
+	text-transform: none;
+}
+button {
+	-webkit-appearance: button;
+}
+[type='button'] {
+	-webkit-appearance: button;
+}
+[type='reset'] {
+	-webkit-appearance: button;
+}
+[type='submit'] {
+	-webkit-appearance: button;
+}
+fieldset {
+	padding: 0.35em 0.75em 0.62em;
+}
+legend {
+	padding: 0px; color: inherit; display: table; white-space: normal; max-width: 100%; box-sizing: border-box;
+}
+progress {
+	vertical-align: baseline;
+}
+textarea {
+	overflow: auto;
+}
+[type='checkbox'] {
+	padding: 0px; box-sizing: border-box;
+}
+[type='radio'] {
+	padding: 0px; box-sizing: border-box;
+}
+[type='search'] {
+	-webkit-appearance: textfield; outline-offset: -2px;
+}
+details {
+	display: block;
+}
+summary {
+	display: list-item;
+}
+template {
+	display: none;
+}
+[hidden] {
+	display: none;
+}
